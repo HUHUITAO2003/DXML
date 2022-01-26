@@ -10,6 +10,21 @@ public class root {
         String specializzazione;
         ArrayList<element> studenti;
 
+        @Override
+        public String toString() {
+
+                return "La classe " + classe + " " + specializzazione + " si trova nell'aula " + aula.getNome()
+        + " ed è composta dai seguenti studenti: " + toStringstudenti();
+        }
+
+        public String toStringstudenti(){
+                String string = "";
+                for (int i = 0; i < studenti.size(); i++) {
+                        string +='\n' + "- " + studenti.get(i).getCognome();
+                }
+                return string;
+        }
+
         public root(){}
 
         public String getAnnoDiInizio() {
